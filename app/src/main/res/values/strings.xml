@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">VIEW MAP</string>
+    <string-array name="names">
+        <item>Choose Current Location</item>
+        <item name="library">library</item>
+        <item name="sunya">sunya</item>
+        <item name="bohr">bohr</item>
+        <item name="hercules">hercules</item>
+        <item name="skywalk">skywalk</item>
+        <item name="ccf">ccf</item>
+        <item name="arc">arc</item>
+        <item name="boson">boson</item>
+    </string-array>
+
+    <string-array name="names2">
+        <item>Choose Target Location</item>
+        <item name="_library">library</item>
+        <item name="_sunya">sunya</item>
+        <item name="_bohr">bohr</item>
+        <item name="_hercules">hercules</item>
+        <item name="_skywalk">skywalk</item>
+        <item name="_ccf">ccf</item>
+        <item name="_arc">arc</item>
+        <item name="_boson">boson</item>
+    </string-array>
+    <string name="Groundfloor">Ground floor</string>
+    <string name="Firstfloor">First floor</string>
+    <string name="Secondfloor">Second floor</string>
+    <string name="Thirdfloor">Third floor</string>
+    <string name="Navigate">Navigate</string>
+
+</resources>
