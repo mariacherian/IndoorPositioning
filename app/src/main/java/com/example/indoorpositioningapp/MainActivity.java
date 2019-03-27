@@ -23,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
     int i,val1,val2;
     private RadioGroup radiogroup;
     private ImageView imageviewphoto,iv;
+    private String []stri={"library_sunya","sunya_library","hercules_bohr","hercules_skywalk","skywalk_ccf","skywalk_arc","ccf_skywalk","ccf_arc","arc_skywalk","arc_ccf"};
+    private Integer []ph={R.drawable.library_sunya,R.drawable.sunya_library,R.drawable.hercules_bohr,R.drawable.hercules_skywalk,R.drawable.skywalk_ccf,R.drawable.skywalk_arc,R.drawable.ccf_skywalk,R.drawable.ccf_arc,R.drawable.arc_skywalk,R.drawable.arc_ccf};
     private Integer []photos= {R.drawable.mapg,R.drawable.mapf,R.drawable.maps,R.drawable.mapt};
     String str;
 
@@ -43,12 +45,14 @@ public class MainActivity extends AppCompatActivity {
                     String s2 = mySpinner2.getSelectedItem().toString();
                     Toast.makeText(MainActivity.this, "TARGET LOCATION : " + s2, Toast.LENGTH_SHORT).show();
                     str=s1+'_'+s2;
-                    if(!(str=="library_sunya"))
-                    {
-                        ImageView iv=findViewById(R.id.imageView2);
-                        iv.setImageResource(R.drawable.library_sunya);
+                    int i;
+                    for(i=0;i<=stri.length;i++) {
+                        if (!(str == stri[i])) {
+                            ImageView iv = findViewById(R.id.imageView2);
+                            iv.setImageResource(ph[i]);
+                            break;
+                        }
                     }
-
 
 
             }
