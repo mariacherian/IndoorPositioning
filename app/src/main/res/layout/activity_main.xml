@@ -90,11 +90,6 @@
         android:text="@string/Navigate" />
 
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="211dp"
-        android:layout_height="169dp"
-        app:srcCompat="@drawable/capture" />
 
     <ImageView
         android:id="@+id/imageView"
