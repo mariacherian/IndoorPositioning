@@ -91,12 +91,24 @@
 
 
 
-    <ImageView
+    <com.jsibbold.zoomage.ZoomageView
         android:id="@+id/imageView"
-        android:layout_width="371dp"
-        android:layout_height="259dp"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:src="@drawable/map"
         android:layout_gravity="center_horizontal"
-        android:src="@drawable/map" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.438"
+        app:zoomage_animateOnReset="true"
+        app:zoomage_autoCenter="true"
+        app:zoomage_autoResetMode="UNDER"
+        app:zoomage_maxScale="8"
+        app:zoomage_minScale="0.6"
+        app:zoomage_restrictBounds="false"
+        app:zoomage_translatable="true"
+        app:zoomage_zoomable="true" />
 
 
 </LinearLayout>
