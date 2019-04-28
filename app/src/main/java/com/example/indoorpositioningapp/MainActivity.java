@@ -2,6 +2,10 @@ package com.example.indoorpositioningapp;
 
 
 import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.IntentFilter;
+import android.net.wifi.ScanResult;
+import android.net.wifi.WifiManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -14,7 +18,9 @@ import android.widget.Spinner;
 import android.widget.Toast;
 import android.content.Intent;
 
-
+import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -38,6 +44,9 @@ public class MainActivity extends AppCompatActivity {
         Button nav_button = findViewById(R.id.nav_button);
         this.imageviewphoto=findViewById(R.id.imageView);
         this.radiogroup= findViewById(R.id.radiogp);
+
+        RunScan();
+
         this.radiogroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener(){
 
                                                        @Override
@@ -88,7 +97,61 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    }}
+    }
+
+
+    private int RunScan() {
+
+        WifiManager wManager;
+        List<ScanResult> wifiList;
+        String[] BSSID=new String[]{"killall"};
+        // initiate the listadapter
+        ArrayList<String> list = new ArrayList<String>();
+        ArrayAdapter<String> myAdapter = new ArrayAdapter <String>(this,android.R.layout.simple_list_item_1, list);
+
+
+
+
+        wManager = (WifiManager) getApplicationContext().getSystemService(Context.WIFI_SERVICE);
+        wifiList = wManager.getScanResults();
+
+
+
+        new IntentFilter(wManager.SCAN_RESULTS_AVAILABLE_ACTION);
+        wManager.startScan();
+        for (int i = 0; i < wifiList.size(); i++) {
+            ScanResult scanresult = wManager.getScanResults().get(i);
+            double exp = (27.55 - (20 * Math.log10(scanresult.frequency)) + Math.abs(scanresult.level)) / 20.0;
+            Math.pow(10.0, exp);
+
+            //txv[0].setMovementMethod(new ScrollingMovementMethod());
+            double dis = (Math.pow(10.0, exp) * 100.0) / 100.0;
+            DecimalFormat df = new DecimalFormat("###.##");
+            String id = scanresult.SSID.toString();
+            String id2 = scanresult.BSSID.toString();
+
+            list.add("SSID: "+id + "\n" +"Mac: "+ id2 + "\n" + "Estimated Distance: " + df.format(dis) + "m.\n"+"Capabilities: "+scanresult.capabilities+"\nStrength: "+scanresult.level+"db"+"\nFrequency : "+scanresult.frequency+".mhz"+"\n");
+
+            String out = "SSID: "+id + "\n" +"Mac: "+ id2 + "\n" + "Estimated Distance: " + df.format(dis) + "m.\n"+"Capabilities: "+scanresult.capabilities+"\nStrength: "+scanresult.level+"db"+"\nFrequency : "+scanresult.frequency+".mhz"+"\n";
+
+            Toast.makeText(this, out, Toast.LENGTH_SHORT).show();
+            // assign the list adapter
+
+
+
+
+        }
+
+
+
+
+
+        return  0;
+    }
+
+
+
+}
 
 
 
