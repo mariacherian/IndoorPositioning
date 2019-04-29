@@ -60,11 +60,26 @@ public class MainActivity extends AppCompatActivity {
                                                            int index= group.indexOfChild(radioButton);
                                                            imageviewphoto.setImageResource(photos[index]);
 
+
+
+                                                           Button refreshbtn=findViewById(R.id.refreshbtn);
+        refreshbtn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Toast.makeText(getBaseContext(), "You have clicked Refresh button", Toast.LENGTH_SHORT).show();
+            }
+        });
                                                        }
 
 
                                                    });
-
+        Button refreshbtn=findViewById(R.id.refreshbtn);
+        refreshbtn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Toast.makeText(getBaseContext(), "You have clicked Refresh button", Toast.LENGTH_SHORT).show();
+                val=RunScan();
+                mySpinner.setSelection(val);
+            }
+        });
 
         final List<String> namesList = new ArrayList<>(Arrays.asList(names));
 
