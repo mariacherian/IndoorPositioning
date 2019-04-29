@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     //private String []stri={"library_sunya","sunya_library","hercules_bohr","hercules_skywalk","skywalk_ccf","skywalk_arc","ccf_skywalk","ccf_arc","arc_skywalk","arc_ccf"};
     //private Integer []ph={R.drawable.library_sunya,R.drawable.sunya_library,R.drawable.hercules_bohr,R.drawable.hercules_skywalk,R.drawable.skywalk_ccf,R.drawable.skywalk_arc,R.drawable.ccf_skywalk,R.drawable.ccf_arc,R.drawable.arc_skywalk,R.drawable.arc_ccf};
     private Integer []photos= {R.drawable.mapg,R.drawable.mapf,R.drawable.maps,R.drawable.mapt};
-    private String[] mac={"24:e9:b3:bb:70:cf","0","38:e6:0a:08:d3:77","cc:61:e5:55:3d:71","4c:18:9a:b5:f0:84"};
+    private String[] mac={"0","4c:18:9a:b5:f0:84","38:e6:0a:08:d3:77","0","24:e9:b3:bb:70:cf","a8:6b:ad:85:50:57","cc:61:e5:55:3d:71",""};
     private String[] location={"library","sunya", "hercules","bohr", "skywalk", "ccf", "arc", "boson"};
     String[] names = new String[]{"library", "sunya","hercules", "bohr","skywalk", "ccf", "arc", "boson"};
     String str;

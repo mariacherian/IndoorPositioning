@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Display"
-    android:orientation="horizontal">
+    tools:context=".Display">
 
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
 
 
         <com.jsibbold.zoomage.ZoomageView
             android:id="@+id/imageView"
-            android:layout_width="277dp"
-            android:layout_height="140dp"
-            android:layout_gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
             android:src="@drawable/map"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -31,22 +33,20 @@
             app:zoomage_zoomable="true" />
 
 
-    <Button
-        android:id="@+id/next"
-        android:text="NEXT"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:visibility="invisible" />
+    </LinearLayout>
+      <Button
+          android:id="@+id/next"
+          android:layout_width="145dp"
+          android:layout_height="wrap_content"
+          android:layout_gravity="bottom|center"
+          android:text="NEXT"
+          android:visibility="invisible" />
 
 
-
-        <!--android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:text="NEXT"-->
+    <!--android:layout_alignParentEnd="true"
+    android:layout_alignParentRight="true"
+    android:layout_alignParentBottom="true"
+    android:text="NEXT"-->
 
 
 
@@ -84,4 +84,4 @@
             android:layout_alignParentBottom="true"/>
 
     </RelativeLayout>-->
-</LinearLayout>
+</FrameLayout>

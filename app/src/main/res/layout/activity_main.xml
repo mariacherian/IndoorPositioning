@@ -96,7 +96,7 @@
         android:layout_width="wrap_content"
         android:layout_height="36dp"
         android:layout_gravity="center"
-        android:text="@string/Navigate" />
+        android:text="GO" />
 
 
     <com.jsibbold.zoomage.ZoomageView
